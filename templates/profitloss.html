@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit/Loss Calculator</title>
+</head>
+<body>
+    <div class="container">
+     <h1>📈 Profit/Loss Calculator</h1>
+    
+    <form method="POST">
+        <label>Entry Price (USDT):</label>
+        <input type="number" step="0.01" name="entry_price" required><br><br>
+
+        <label>Exit Price (USDT):</label>
+        <input type="number" step="0.01" name="exit_price" required><br><br>
+
+        <label>Position Size (amount of coin):</label>
+        <input type="number" step="0.0001" name="position_size" required><br><br>
+
+        <label>Trade Type:</label>
+        <select name="trade_type" required>
+            <option value="long">Long</option>
+            <option value="short">Short</option>
+        </select><br><br>
+
+        <button type="submit">Calculate P/L</button>
+    </form>
+
+    {% if profit_loss is defined %}
+        <p><strong>Profit/Loss:</strong> {{ profit_loss }} USDT</p>
+    {% endif %}
+
+    <br>
+    <a href="/">⬅️ Back to Home</a>
+</div>
+</body>
+</html>
+<!-- This is the profit/loss calculator template. It allows users to input the entry price, exit price, position size, and trade type (long or short) to calculate the profit or loss from a trade. -->
+<!-- The result is displayed after the form submission. -->

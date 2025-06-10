@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Calculator</title>
+</head>
+<body>
+<div class="container">
+    <h1>Margin Calculator</h1>
+    <form method="POST">
+        <label>Coin Price (USDT):</label>
+        <input type="number" step="0.01" name="coin_price" required><br><br>
+
+        <label>Leverage (e.g., 20 for 20x):</label>
+        <input type="number" step="1" name="leverage" required><br><br>
+
+        <label>Position Size (amount of coin):</label>
+        <input type="number" step="0.0001" name="position_size" required><br><br>
+
+        <button type="submit">Calculate Margin</button>
+    </form>
+
+    {% if result is defined %}
+        <p><strong>Minimum USDT Required:</strong> {{ result }} USDT</p>
+    {% endif %}
+
+    <br>
+    <a href="/">⬅️ Back to Home</a>
+</div>
+
+</body>
+</html>
+<!-- This is the margin calculator template. It allows users to input the coin price, leverage, and position size to calculate the minimum USDT required for a margin trade. -->
+<!-- The result is displayed after the form submission. -->
