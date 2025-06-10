@@ -31,3 +31,16 @@ A modern web-based crypto calculator to help traders quickly estimate **margin r
 ```bash
 git clone https://github.com/yourusername/crypto-calculator.git
 cd crypto-calculator
+
+Create Virtual Environment
+python -m venv venv
+
+Activate it:
+
+Windows:
+
+venv\Scripts\activate
+
+macOS/Linux:
+
+source venv/bin/activate
